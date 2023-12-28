@@ -1,0 +1,581 @@
+@import "variables";
+@import "mixin";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    @font-face {
+        font-family: NunitoSans-Medium;
+        src: url(../../NunitoSans-Medium.ttf);
+    }
+}
+
+body {
+    background-color: $bgColor;
+    font-family: NunitoSans-Medium;
+}
+header {
+    padding: 0 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    margin: 2rem 0;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+        width: 5rem;
+        height: 5rem;
+    }
+    ul {
+        list-style: none;
+        display: flex;
+        padding: 0.8125rem 1.25rem;
+        margin-left: 8rem;
+        align-items: flex-start;
+        gap: 1.25rem;
+        a {
+            text-decoration: none;
+            @include textStyle(1rem, 500, $textColor);
+            line-height: 150%;
+            transition: all 0.17s ease-in-out;
+
+            &:hover {
+                color: $white;
+                font-weight: bold;
+                border-bottom: 1px solid $white;
+            }
+        }
+    }
+    .button {
+        padding: 0.6875rem 0.9375rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: $bgButton;
+        border-radius: 0.3125rem;
+        @include textStyle(1.2rem ,300 ,$white);
+        transition: all 0.1 ease-in;
+        cursor: pointer;
+
+        &:hover{
+            background-color: $white;
+            color: $bgButton;
+            font-weight: bold;
+        }
+    }
+
+}
+.meta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 6.5rem 0 15rem;
+    gap: 2.2rem ;
+
+
+    h5 {
+        text-align: center;
+        @include textStyle(3.0rem, 600,$textColor);
+    }
+
+    p{
+        text-align: center;
+        @include textStyle(1.5rem , 100, $textColor);
+    }
+}
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 7rem 3rem;
+}
+.firstsection {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    height: 19.5rem;
+    img {
+        width: 45%
+    };
+    .allcontents {
+        display: flex;
+        width: 55%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -4rem;
+        gap: 2rem;
+        justify-content: space-between;
+
+        h2 {
+            max-width: 37.5rem;
+            text-align: left;
+            line-height: 100%;
+            @include textStyle(2.6rem,600 ,$headerColor);
+        }
+
+        .contents {
+            display: flex;
+            max-width: 37.5rem;
+            margin-top: 2rem;
+            gap: 4rem;
+            align-items: center;
+            justify-content: center;
+
+            .content {
+                @include textStyle(.95rem ,600, $textColor);
+
+                p{
+                    margin-bottom: 1rem;
+                    line-height: 30px
+                }
+
+                a{
+                    @include textStyle(1.25rem ,600, $textColor);
+                    text-decoration: none;
+                    cursor: pointer;
+                    width: auto;
+                    display: flex;
+                    align-items: center;
+                    svg {
+                        margin-left: 1rem;
+                    }
+
+                    &:hover {
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}
+.secondsection{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15rem 0rem  5rem;
+
+}
+.secondsection .text{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    
+    h3{
+        @include textStyle(2.43rem ,500, $textColor);
+        margin-bottom:1.4rem ;
+    }
+    p{
+        @include textStyle(1.125rem ,400, $textColor);
+    }
+}
+.secondsection .frame{
+    ul {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 4rem;
+        row-gap: 2rem;
+        list-style: none;
+        grid-template-rows: auto;
+
+        li {
+        @include textStyle(1.3rem ,600, $textColor);
+        }
+    }
+
+}
+
+.thirdsection {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    align-items: center;
+    margin: 10rem 0rem 4rem;
+    column-gap: 3rem;
+
+    .showcase{
+        margin-right: 10rem;
+        width: 110%;
+        h3 {
+            @include textStyle(1.4rem ,700, $textColor);
+            margin-bottom: 1rem;
+            line-height: 2rem;
+        }
+        p {
+            @include textStyle(1rem ,500, $textColor);
+        }
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.lastsection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+
+    h1{
+        @include textStyle(2.9rem,600, $headerColor);
+    }
+}
+
+.lastsection .users{
+    display: flex;
+    gap: 10rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    .user{
+
+        display: flex;
+        width: 50%;
+        padding: 3.75rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+        border-radius: 0.3125rem;
+        background-color: $textColor;
+
+        p{
+            @include textStyle(1.1rem,600, $bgColor);
+        }
+        h6{
+            @include textStyle(1.25rem,700, $bgColor);
+        }
+        span{
+            @include textStyle(1rem,600, $bgColor);
+        }   
+    }
+}
+
+footer{
+    margin: 3rem 8rem;
+    display: flex;
+    align-self:center;
+    justify-content: space-between;
+
+}
+.footContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+
+    h5{
+        @include textStyle(1rem ,600, $textColor);
+        margin-bottom: 3px;
+    }
+    h4{
+        @include textStyle(1rem ,600, $textColor);
+        margin-bottom: 3px;
+    }
+    p{
+        margin-top: 3px;
+    }
+    span{
+        @include textStyle(1rem ,600, #000);
+    }
+}
+
+@include media(L){
+    .header {
+        display: flex;
+        margin: 2rem 0;
+        justify-content: space-between;
+        align-items: center;
+    
+        ul {
+            margin-left: 4rem;
+        }
+        .button {
+           width: auto;
+        }     
+    }
+    .meta{
+        margin: 0rem  0 3rem;
+        gap: 2.2rem ;
+    }
+
+    .firstsection {
+        width: 100%;
+        gap: 1rem;
+        height: 19.5rem;
+        img {
+            width: 45%;
+        }
+        .allcontents {
+            display: flex;
+            width: 55%;
+            h2 {
+                width: 100%;
+                text-align: left;
+                line-height: 100%;
+                @include textStyle(2.2rem,600 ,$headerColor);
+            }
+    
+            .contents {
+                display: flex;
+                max-width: 100%;
+                margin-top: 2rem;
+                padding: 0 1rem;
+                gap: 4rem;
+                align-items: center;
+                justify-content: center;
+    
+                .content {
+                    @include textStyle(.95rem ,600, $textColor);
+    
+                    p{
+                        margin-bottom: 1rem;
+                        line-height: 30px
+                    }
+    
+                    a{
+                        @include textStyle(1.25rem ,600, $textColor);
+                        width: auto;
+                        svg {
+                            margin-left: .7rem;
+                        }
+                    }
+                }
+            }
+        }
+    }  
+    .secondsection{
+        margin: 15rem 0rem  0rem;
+    }
+}
+
+@include media(M){
+    .header {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem 0;
+        justify-content: center;
+        align-items: center;
+        ul {
+            display: flex;
+            padding: 0.8125rem 1.25rem;
+            margin-left: 0rem;
+            align-items: flex-start;
+            gap: 1rem;
+            a {
+                @include textStyle(1rem, 500, $textColor);
+            }
+        }
+        .button {
+            padding: 0.6875rem 0.9375rem;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            @include textStyle(1.2rem ,300 ,$white);
+        }
+    }
+
+    .meta{
+       
+        margin: 0rem  0 12rem;
+        gap: 2.2rem ;
+    
+    
+        h5 {
+            @include textStyle(2.2rem, 600,$textColor);
+        }
+    
+        p{
+            @include textStyle(1.0rem , 100, $textColor);
+        }
+    }
+    .firstsection {
+        flex-direction: column-reverse;
+        width: 100%;
+        margin: 3rem 0 5rem;
+        img {
+            width: 95%
+        };
+        .allcontents {
+            width: 100%;
+            margin-top: 4rem;
+            h2 {
+                text-align: left;
+                line-height: 100%;
+                @include textStyle(2rem,600 ,$headerColor);
+            }
+    
+            .contents {
+                margin-top: 2rem;
+                gap: 4rem;
+                .content {    
+                    p{
+                        margin-bottom: 1rem;
+                        line-height: 30px;
+                        @include textStyle(.7rem ,600, $textColor);
+
+                    }
+    
+                    a{
+                        @include textStyle(1rem ,600, $textColor);
+                        text-decoration: none;
+                        cursor: pointer;
+                        width: 60%;
+                        display: flex;
+                        align-items: center;
+                        svg {
+                            margin-left: 1rem;
+                        }
+    
+                        &:hover {
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+          
+    }
+    .secondsection{
+        flex-direction: column;
+        gap: 3rem;
+        margin: 18rem 0rem 0rem;
+    }
+    .secondsection .text{
+        width: 95%;
+    }
+    .secondsection .frame{
+            ul li {
+            @include textStyle(1.1rem ,600, $textColor);
+        }
+    }
+
+    .thirdsection {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10rem 0rem 4rem;
+        gap: 3rem;
+        
+        .showcase{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0rem;
+            width: 100%;
+            h3 {
+                @include textStyle(1.4rem ,700, $textColor);
+                text-align: center;
+            }
+            p {
+                @include textStyle(1rem ,500, $textColor);
+                text-align: center;
+            }
+        }
+        img{
+            width: 50%;
+            height: 50%;
+        }
+    }
+
+    .lastsection {
+        width: 100%;
+        gap: 3rem;
+        h1{
+            text-align: center;
+            font-size: 2rem;
+        }
+       
+    } 
+    .lastsection .users{
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+
+        .user{
+            padding: 1.2rem;
+            width: 50%;
+            height: auto;
+            p,span,h6{
+                text-align: center;
+            }
+            h6{
+                height: 3rem;
+            }
+            p{
+                height: auto;
+            }
+           
+        }
+    }
+     
+
+}
+
+@include media(S){
+
+    .lastsection {
+        width: 100%;
+        gap: 2rem;
+        h1{
+            text-align: center;
+            font-size: 2rem;
+        }
+       
+    } 
+    .lastsection .users{
+          .user{
+            padding: 1.2rem;
+            width: 50%;
+            height: auto;
+            p,span,h6{
+                text-align: center;
+            }
+            h6{
+                height: 3rem;
+            }
+            p{
+                height: auto;
+                width: 100%;
+                overflow: scroll;
+            }
+           
+        }
+    }
+
+
+    footer{
+        margin: -2rem 4rem 3rem;
+        display: flex;
+        flex-direction: column;
+        align-self:center;
+        justify-content:center;
+
+        svg{
+                margin: 0 auto;
+            }
+    }
+    .footContainer{
+        display: flex;
+        margin-top: 0.9rem;
+        flex-direction: column;
+        gap: 0.1rem;
+        align-items: center;
+    }
+    
+}

@@ -1,0 +1,21 @@
+@mixin textStyle($FontSize,$FontWeight,$FontColor) {
+    font-size: $FontSize;
+    font-weight: $FontWeight;
+    color: $FontColor;
+}
+
+@mixin media($item){
+    @if ($item == M) {
+        @media (max-width : 768px) {
+            @content;
+        }
+    } @else if($item == L ){
+        @media (min-width : 769px) and (max-width :1200px) {
+            @content;
+        }
+    }@else if($item == S) {
+        @media (max-width : 500px) {
+            @content;
+        }
+    }
+}
